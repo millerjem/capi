@@ -23,16 +23,16 @@ class Clusterawsadm < Formula
 
   def install
     if OS.mac? && Hardware::CPU.intel?
-      bin.install "clusterawsadm-darwin-amd64" => "clusterawsapi"
+      bin.install "clusterawsadm-darwin-amd64" => "clusterawsadm"
     end
     if OS.mac? && Hardware::CPU.arm?
-      bin.install "clusterawsadm-darwin-arm64" => "clusterawsapi"
+      bin.install "clusterawsadm-darwin-arm64" => "clusterawsadm"
     end
     if OS.linux? && Hardware::CPU.intel?
-      bin.install "clusterawsadm-linux-amd64" => "clusterawsapi"
+      bin.install "clusterawsadm-linux-amd64" => "clusterawsadm"
     end
     if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      bin.install "clusterawsadm-linux-arm64" => "clusterawsapi"
+      bin.install "clusterawsadm-linux-arm64" => "clusterawsadm"
     end
   end
 
