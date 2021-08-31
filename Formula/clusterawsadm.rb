@@ -1,4 +1,4 @@
-class ClusterAWSAdm < Formula
+class Clusterawsadm < Formula
   version "0.7.0"
   desc "Kubernetes Cluster API Provider AWS provides consistent deployment and day 2 operations of self-managed and EKS Kubernetes clusters on AWS."
   homepage "http://cluster-api-aws.sigs.k8s.io/"
