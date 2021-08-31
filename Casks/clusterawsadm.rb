@@ -20,7 +20,6 @@ cask "clusterawsadm" do
 
   desc "Kubernetes Cluster API Provider AWS provides consistent deployment and day 2 operations of self-managed and EKS Kubernetes clusters on AWS."
   homepage "http://cluster-api-aws.sigs.k8s.io/"
-  license "https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/main/LICENSE"
   
   def install
     bin.install "clusterawsapi"
