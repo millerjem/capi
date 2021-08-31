@@ -27,6 +27,17 @@ cask "clusterawsadm" do
   desc "Kubernetes Cluster API Provider AWS provides consistent deployment and day 2 operations of self-managed and EKS Kubernetes clusters on AWS."
   homepage "http://cluster-api-aws.sigs.k8s.io/"
   
-  app: clusterawsadm
-#  binary "clusterawsadm-darwin-amd64", target: "clusterawsadm"
+  if OS.mac? && Hardware::CPU.intel?
+    binary "clusterawsadm-darwin-amd64", target: "clusterawsadm"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    binary "clusterawsadm-darwin-arm64", target: "clusterawsadm"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    binary "clusterawsadm-linux-amd64", target: "clusterawsadm"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::COU.is_64_bit?
+    binary "clusterawsadm-linux-arm64", target: "clusterawsadm"
+  end
+
 end
