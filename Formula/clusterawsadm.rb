@@ -21,8 +21,17 @@ class Clusterawsadm < Formula
     sha256 ""
   end
 
-  def install
-    bin.install "clusterawsapi"
+  if OS.mac? && Hardware::CPU.intel?
+    bin.install "clusterawsadm-darwin-amd64" => "clusterawsapi"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    bin.install "clusterawsadm-darwin-arm64" => "clusterawsapi"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    bin.install "clusterawsadm-linux-amd64" => "clusterawsapi"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    bin.install "clusterawsadm-linux-arm64" => "clusterawsapi"
   end
 
   test do
