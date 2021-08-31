@@ -22,11 +22,5 @@ cask "clusterawsadm" do
   desc "Kubernetes Cluster API Provider AWS provides consistent deployment and day 2 operations of self-managed and EKS Kubernetes clusters on AWS."
   homepage "http://cluster-api-aws.sigs.k8s.io/"
   
-  def install
-    bin.install "clusterawsapi"
-  end
-
-  test do
-    system "#{bin}/clusterawsapi --version"
-  end
+  binary "clusterawsadm-darwin-amd64", target: "clusterawsadm"
 end
