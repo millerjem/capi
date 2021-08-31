@@ -28,16 +28,16 @@ cask "clusterawsadm" do
   homepage "http://cluster-api-aws.sigs.k8s.io/"
   
   if OS.mac? && Hardware::CPU.intel?
-    binary "clusterawsadm-darwin-amd64", target: "clusterawsadm"
+    bin.install "clusterawsadm-darwin-amd64" => "clusterawsadm"
   end
   if OS.mac? && Hardware::CPU.arm?
-    binary "clusterawsadm-darwin-arm64", target: "clusterawsadm"
+    bin.install "clusterawsadm-darwin-arm64" => "clusterawsadm"
   end
   if OS.linux? && Hardware::CPU.intel?
-    binary "clusterawsadm-linux-amd64", target: "clusterawsadm"
+    bin.install "clusterawsadm-linux-amd64" => "clusterawsadm"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::COU.is_64_bit?
-    binary "clusterawsadm-linux-arm64", target: "clusterawsadm"
+    bin.install "clusterawsadm-linux-arm64" => "clusterawsadm"
   end
 
 end
